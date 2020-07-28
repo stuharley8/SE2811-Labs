@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="gui.Controller">
+    <rowConstraints>
+        <RowConstraints valignment="TOP"/>
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+        <ColumnConstraints halignment="CENTER" hgrow="NEVER"/>
+    </columnConstraints>
+    <children>
+
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" minWidth="400"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints valignment="CENTER"/>
+                <RowConstraints valignment="CENTER"/>
+            </rowConstraints>
+            <children>
+                <Label fx:id="bidAmount" text="000.00" alignment="CENTER"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <font>
+                        <Font name="Arial" size="42"/>
+                    </font>
+                </Label>
+                <ImageView fx:id="itemView" fitHeight="580" fitWidth="400" preserveRatio="true"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            </children>
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="400">
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <children>
+
+                <TextArea fx:id="console" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                          GridPane.columnSpan="2" editable="false" prefHeight="500" prefWidth="800">
+                    <font>
+                        <Font fx:id="dataFont" name="Arial" size="16"/>
+                    </font>
+                </TextArea>
+
+                <Label text="Bidders:" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                    <font>
+                        <Font fx:id="labelFont" name="Arial" size="18"/>
+                    </font>
+                </Label>
+                <TextField fx:id="bidders" text="0" GridPane.rowIndex="1"
+                       GridPane.columnIndex="1" font="$dataFont"/>
+
+                <Label text="Bids in pool:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       font="$labelFont"/>
+                <TextField fx:id="bidsInPool" text="0" GridPane.rowIndex="2"
+                           GridPane.columnIndex="1" font="$dataFont"/>
+
+                <Button text="Update" GridPane.rowIndex="4" GridPane.columnIndex="0" font="$dataFont"
+                        GridPane.columnSpan="2" prefWidth="500" onAction="#updateAttributes"/>
+                <Button text="Start" GridPane.rowIndex="5" GridPane.columnIndex="0" font="$dataFont"
+                        GridPane.columnSpan="2" prefWidth="500" onAction="#startAuctions"/>
+            </children>
+        </GridPane>
+
+    </children>
+</GridPane>
