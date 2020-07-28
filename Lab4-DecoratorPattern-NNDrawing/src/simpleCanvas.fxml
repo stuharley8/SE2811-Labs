@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="networks.SimpleCanvasController">
+    <top>
+        <ToolBar prefHeight="40.0" BorderPane.alignment="CENTER">
+            <items>
+                <RadioButton fx:id="alexLike" onAction="#showNetwork" text="AlexNet-Like">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="network" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="inceptionLike" onAction="#showNetwork" text="Inception-Like" toggleGroup="$network">
+                </RadioButton>
+            <RadioButton fx:id="stuartLike" onAction="#showNetwork" text="Stuart-Like" toggleGroup="$network" />
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" height="650" width="850" BorderPane.alignment="CENTER" />
+    </center>
+</BorderPane>
