@@ -1,0 +1,17 @@
+Time
+keypress
+tick
+bee
+distance
+energy level
+flower
+nectar
+images
+
+<abstract> Bee - movement type, energyLevel, {{Point2D position}}, movePerTick(Point2D position), Flower checkPosition(Point2D) - threshold, constant final distance = 10
+RectangularMoveBee - move() move rectangular_screen...
+TargettedMoveBee - move() moveTowardsTarget...
+Flower - boolean hasNectar, Point2D position
+EnergyPoint
+
+Paul Rinaldi & Stuart Harley
